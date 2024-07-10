@@ -37,8 +37,6 @@ const servidor = http.createServer((req, res)=>
         req.on('data', chunk =>{
             body = chunk.toString() ;
         });
-
-        //curl -X POST -d "color=purple&hex=#FF00FF" http://localhost:3000/addCor
         
         req.on('end', ()=>{
             const parseBody = parse(body);
@@ -65,5 +63,12 @@ const servidor = http.createServer((req, res)=>
 });
 
 servidor.listen(porta, hostname, ()=>{
-    console.log('Servido Rodando!!!');
+     console.log('Servido Rodando!!!');
 });
+
+// //Exemplo POST
+// //curl -X POST -d "color=purple&hex=#FF00FF" http://localhost:3000/addCor
+
+
+// //Exemplo GET
+// //http://localhost:3000/pega_cor?cor=vermelho
